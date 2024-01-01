@@ -10,6 +10,8 @@
 
 	export let form: ActionData;
 
+	let loading: boolean = false;
+
 	let formData: FormData = {
 		budget: 0,
 		location: '',
@@ -19,7 +21,7 @@
 	};
 </script>
 
-<main class="container prose dark:prose-invert">
+<main class="container prose dark:prose-invert mt-20">
 	<h2>Discover Delightful Dishes Within Your Budget!</h2>
 
 	<form method="POST" use:enhance>
@@ -61,16 +63,12 @@
 			inputmode="text"
 		/>
 
-		<Button class="mt-4" type="submit">Let's Spice It Up!</Button>
+		<Button class="mt-4" type="submit" disabled={loading}>Let's Spice It Up!</Button>
 	</form>
-
-	<!-- {#if form}
-		<div>
-			{@html marked(form.toString())}
-		</div>
-	{/if} -->
 </main>
 
-<div class="mt-12 prose dark:prose-invert recipe min-w-max container">
-	{@html marked(recipe)}
-</div>
+{#if form}
+	<div class="mt-12 prose dark:prose-invert recipe min-w-max container">
+		{@html marked(form.toString())}
+	</div>
+{/if}

@@ -15,7 +15,7 @@ export const actions: Actions = {
 
 		console.table(data);
 		const respone = await run(data);
-		console.log(respone);
+		// console.log(respone);
 		return respone;
 	}
 };
