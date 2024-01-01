@@ -39,6 +39,7 @@
 
 		<Label for="dPreferences">Your Tasty Preferences</Label>
 		<Input
+			name="dPreferences"
 			placeholder="Vegetarian, Pescetarian, etc."
 			bind:value={formData.dPreferences}
 			type="text"
